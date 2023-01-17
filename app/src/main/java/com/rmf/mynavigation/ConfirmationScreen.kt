@@ -15,6 +15,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.ramcosta.composedestinations.navigation.popUpTo
 import com.rmf.mynavigation.destinations.LoginScreenDestination
 
 @Destination
@@ -52,7 +53,7 @@ fun ConfirmationScreen(
             Button(
                 onClick = {
                     navigator.navigate(LoginScreenDestination(message = "Silahkan cek email anda dan kembali login")){
-                       //  popUpTo(NavGraphs.root)
+                        popUpTo(NavGraphs.root)
                     }
                 }
             ) {
@@ -61,5 +62,4 @@ fun ConfirmationScreen(
         }
 
     }
-
 }
