@@ -13,6 +13,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.rmf.mynavigation.destinations.ForgetPasswordScreenDestination
+import com.rmf.mynavigation.destinations.GreetingScreenDestination
 
 @OptIn(ExperimentalMaterial3Api::class)
 @RootNavGraph(start = true)
@@ -61,7 +62,7 @@ fun LoginScreen(
                     value = email,
                     onValueChange = { value -> email = value }
                 )
-                Button(onClick = { /*TODO*/ }) {
+                Button(onClick = { navigator.navigate(GreetingScreenDestination(email = email)) }) {
                     Text(text = "Login")
                 }
                 Spacer(modifier = Modifier.height(24.dp))
